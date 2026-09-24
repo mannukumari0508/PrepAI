@@ -4,54 +4,54 @@ PrepAI is a web-based placement preparation platform designed to help students p
 
 ## Features
 
-* **Technical Practice**
+### Technical Practice
 
-  * Python
-  * Java
-  * SQL
-  * DBMS
-  * Data Structures & Algorithms
-  * Computer Networks
+* Python
+* Java
+* SQL
+* DBMS
+* Data Structures & Algorithms
+* Computer Networks
 
-* **Coding Practice**
+### Coding Practice
 
-  * Easy Problems
-  * Medium Problems
-  * Placement-Oriented Problems
+* Easy Problems
+* Medium Problems
+* Placement-Oriented Problems
 
-* **Aptitude Practice**
+### Aptitude Practice
 
-  * Quantitative Aptitude
-  * Logical Reasoning
-  * Verbal Ability
+* Quantitative Aptitude
+* Logical Reasoning
+* Verbal Ability
 
-* **Mock Interview**
+### Mock Interview
 
-  * Technical Interview
-  * HR Interview
-  * Interview performance tracking
+* Technical Interview
+* HR Interview
+* Interview performance tracking
 
-* **AI Resume Analyzer**
+### Resume Analyzer
 
-  * PDF resume upload
-  * Resume text extraction
-  * Section detection
-  * Technical skill detection
-  * Resume improvement suggestions
+* PDF resume upload
+* Resume text extraction
+* Resume section detection
+* Technical skill detection
+* Resume improvement suggestions
 
-* **Performance Analytics**
+### Performance Analytics
 
-  * Questions attempted
-  * Interview sessions
-  * Subject-wise technical scores
-  * Overall technical performance
-  * Areas of strength and improvement
+* Questions attempted
+* Interview sessions
+* Subject-wise technical scores
+* Overall technical performance
+* Areas of strength and improvement
 
-* **User Authentication**
+### User Authentication
 
-  * Registration
-  * Login
-  * Session-based access control
+* Registration
+* Login
+* Session-based access control
 
 ## Technology Stack
 
@@ -95,11 +95,9 @@ PrepAI/
 │   ├── resume_analyzer.html
 │   └── ...
 │
-├── static/
-│   └── css/
-│       └── style.css
-│
-└── venv/
+└── static/
+    └── css/
+        └── style.css
 ```
 
 ## Key Modules
@@ -114,11 +112,11 @@ Users can practice programming problems categorized by difficulty and placement 
 
 ### Mock Interview
 
-PrepAI provides separate technical and HR interview practice. Interview responses are evaluated using predefined criteria and the completed interview activity is tracked.
+PrepAI provides separate technical and HR interview practice. Interview responses are evaluated using predefined criteria and completed interview activity is tracked.
 
 ### Resume Analyzer
 
-Users can upload a PDF resume. PrepAI extracts the text from the document and checks for important resume sections and technical skills. It then provides suggestions for improving the resume.
+Users can upload a PDF resume. PrepAI extracts text from the document and checks for important resume sections and technical skills. It then provides suggestions for improving the resume.
 
 ### Performance Analytics
 
