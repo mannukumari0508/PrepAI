@@ -2,6 +2,10 @@
 
 PrepAI is a web-based placement preparation platform designed to help students practice technical subjects, coding problems, aptitude questions, mock interviews, and resume analysis in one place.
 
+## Preview
+
+![PrepAI Home Page](prepai-home.png)
+
 ## Features
 
 ### Technical Practice
@@ -204,3 +208,7 @@ B.Tech – Computer Science & Engineering
 Asansol Engineering College
 
 GitHub: `https://github.com/mannukumari0508`
+
+
+
+
