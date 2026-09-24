@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frequency of Elements - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/coding/placement">
+                Placement Coding
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                PLACEMENT CODING
+            </p>
+
+            <h1>
+                Frequency of Elements
+            </h1>
+
+            <p>
+                Solve the following programming problem.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-module">
+
+            <h2>
+                Problem Statement
+            </h2>
+
+            <p>
+                Given an array of integers, write a program
+                to count the frequency of each element.
+            </p>
+
+            <br>
+
+            <h3>
+                Example
+            </h3>
+
+            <p>
+                Input: [1, 2, 2, 3, 1, 2]
+            </p>
+
+            <p>
+                Output: 1 → 2, 2 → 3, 3 → 1
+            </p>
+
+            <br>
+
+            <h3>
+                Your Solution
+            </h3>
+
+            <form method="POST">
+
+                <textarea
+                    name="code"
+                    rows="12"
+                    placeholder="Write your code here..."
+                    required></textarea>
+
+                <br><br>
+
+                <button
+                    type="submit"
+                    class="module-btn">
+                    Submit Code
+                </button>
+
+            </form>
+
+
+            {% if result %}
+
+                <div class="feedback correct">
+
+                    <h3>
+                        ✅ Submitted
+                    </h3>
+
+                    <p>
+                        {{ result }}
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <br>
+
+        <a href="/coding/placement"
+           class="module-btn">
+            ← Back to Placement Problems
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

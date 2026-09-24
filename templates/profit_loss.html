@@ -1,0 +1,310 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Profit & Loss - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/aptitude/quantitative">
+                Quantitative Aptitude
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                QUANTITATIVE APTITUDE
+            </p>
+
+            <h1>
+                Profit & Loss 💰
+            </h1>
+
+            <p>
+                Practice profit, loss, discount and
+                selling price questions for placements.
+            </p>
+
+        </section>
+
+
+        <!-- Question 1 -->
+
+        <section class="dashboard-module">
+
+            <h2>
+                Question 1
+            </h2>
+
+            <p>
+                An item is bought for ₹500 and sold
+                for ₹600. What is the profit percentage?
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q1" value="10">
+                    10%
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="15">
+                    15%
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="20">
+                    20%
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="25">
+                    25%
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q1', '20', 'result1')">
+                    Submit Answer
+                </button>
+
+                <p id="result1"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Question 2 -->
+
+        <section class="dashboard-module">
+
+            <h2>
+                Question 2
+            </h2>
+
+            <p>
+                An article costs ₹800 and is sold at a
+                loss of 10%. What is its selling price?
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q2" value="700">
+                    ₹700
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="720">
+                    ₹720
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="740">
+                    ₹740
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="760">
+                    ₹760
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q2', '720', 'result2')">
+                    Submit Answer
+                </button>
+
+                <p id="result2"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Question 3 -->
+
+        <section class="dashboard-module">
+
+            <h2>
+                Question 3
+            </h2>
+
+            <p>
+                An article marked at ₹1,000 is sold
+                after a 20% discount. What is the
+                selling price?
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q3" value="750">
+                    ₹750
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="780">
+                    ₹780
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="800">
+                    ₹800
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="850">
+                    ₹850
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q3', '800', 'result3')">
+                    Submit Answer
+                </button>
+
+                <p id="result3"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+        <a href="/aptitude/quantitative"
+           class="module-btn">
+            ← Back to Quantitative Aptitude
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function checkAnswer(questionName, correctAnswer, resultId) {
+
+            const selected =
+                document.querySelector(
+                    'input[name="' + questionName + '"]:checked'
+                );
+
+            const result =
+                document.getElementById(resultId);
+
+
+            if (!selected) {
+
+                result.textContent =
+                    "Please select an option first.";
+
+                result.style.color = "red";
+
+                return;
+            }
+
+
+            if (selected.value === correctAnswer) {
+
+                result.textContent =
+                    "✅ Correct Answer!";
+
+                result.style.color = "green";
+
+            } else {
+
+                result.textContent =
+                    "❌ Incorrect Answer. Try again!";
+
+                result.style.color = "red";
+
+            }
+
+            fetch("/track-question", {
+                method: "POST"
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```

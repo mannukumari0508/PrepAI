@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Verbal Ability - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/aptitude">
+                Aptitude
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                VERBAL ABILITY
+            </p>
+
+            <h1>
+                Improve Your Verbal Skills 📖
+            </h1>
+
+            <p>
+                Practice grammar, vocabulary and
+                sentence correction questions for placements.
+            </p>
+
+        </section>
+
+
+        <!-- Grammar -->
+
+        <section class="dashboard-module">
+
+            <div class="module-icon">
+                📝
+            </div>
+
+            <h3>
+                Grammar
+            </h3>
+
+            <p>
+                Practice grammar and
+                sentence correction questions.
+            </p>
+
+            <a href="/aptitude/verbal/grammar"
+               class="module-btn">
+                Start Practice
+            </a>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Vocabulary -->
+
+        <section class="dashboard-module">
+
+            <div class="module-icon">
+                📚
+            </div>
+
+            <h3>
+                Vocabulary
+            </h3>
+
+            <p>
+                Improve your vocabulary with
+                placement-oriented questions.
+            </p>
+
+            <a href="/aptitude/verbal/vocabulary"
+               class="module-btn">
+                Start Practice
+            </a>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Sentence Correction -->
+
+        <section class="dashboard-module">
+
+            <div class="module-icon">
+                ✏️
+            </div>
+
+            <h3>
+                Sentence Correction
+            </h3>
+
+            <p>
+                Identify and correct grammatical
+                errors in sentences.
+            </p>
+
+            <a href="/aptitude/verbal/sentence-correction"
+               class="module-btn">
+                Start Practice
+            </a>
+
+        </section>
+
+
+        <br>
+
+
+        <a href="/aptitude"
+           class="module-btn">
+            ← Back to Aptitude
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

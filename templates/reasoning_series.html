@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Number Series - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/aptitude/reasoning">
+                Logical Reasoning
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                LOGICAL REASONING
+            </p>
+
+            <h1>
+                Number Series 🔢
+            </h1>
+
+            <p>
+                Practice number-series questions
+                commonly asked in placement exams.
+            </p>
+
+        </section>
+
+
+        <!-- Question 1 -->
+
+        <section class="dashboard-module">
+
+            <h2>Question 1</h2>
+
+            <p>
+                Find the next number:
+                3, 6, 12, 24, ?
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q1" value="36">
+                    36
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="42">
+                    42
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="48">
+                    48
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="54">
+                    54
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q1', '48', 'result1')">
+                    Submit Answer
+                </button>
+
+                <p id="result1"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Question 2 -->
+
+        <section class="dashboard-module">
+
+            <h2>Question 2</h2>
+
+            <p>
+                Find the next number:
+                5, 10, 20, 40, ?
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q2" value="60">
+                    60
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="70">
+                    70
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="80">
+                    80
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="90">
+                    90
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q2', '80', 'result2')">
+                    Submit Answer
+                </button>
+
+                <p id="result2"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Question 3 -->
+
+        <section class="dashboard-module">
+
+            <h2>Question 3</h2>
+
+            <p>
+                Find the next number:
+                2, 5, 10, 17, ?
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q3" value="24">
+                    24
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="25">
+                    25
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="26">
+                    26
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="27">
+                    27
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q3', '26', 'result3')">
+                    Submit Answer
+                </button>
+
+                <p id="result3"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+        <a href="/aptitude/reasoning"
+           class="module-btn">
+            ← Back to Logical Reasoning
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function checkAnswer(questionName, correctAnswer, resultId) {
+
+            const selected =
+                document.querySelector(
+                    'input[name="' + questionName + '"]:checked'
+                );
+
+            const result =
+                document.getElementById(resultId);
+
+
+            if (!selected) {
+
+                result.textContent =
+                    "Please select an option first.";
+
+                result.style.color = "red";
+
+                return;
+            }
+
+
+            if (selected.value === correctAnswer) {
+
+                result.textContent =
+                    "✅ Correct Answer!";
+
+                result.style.color = "green";
+
+            } else {
+
+                result.textContent =
+                    "❌ Incorrect Answer. Try again!";
+
+                result.style.color = "red";
+
+            }
+
+            fetch("/track-question", {
+                method: "POST"
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>

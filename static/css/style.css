@@ -1,0 +1,1603 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+    height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #334155;
+    font-size: 15px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.register-btn {
+    background: #2563eb;
+    color: #ffffff !important;
+
+    padding: 11px 20px;
+
+    border-radius: 8px;
+
+    transition: 0.3s;
+}
+
+.register-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 650px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 90px 20px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #dbeafe,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #ffffff
+        );
+}
+
+.hero-content {
+    max-width: 900px;
+}
+
+.tagline {
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 64px;
+
+    line-height: 1.1;
+
+    font-weight: 800;
+
+    margin-bottom: 28px;
+}
+
+.hero h1 span {
+    color: #2563eb;
+}
+
+.description {
+    max-width: 720px;
+
+    margin: auto;
+
+    color: #64748b;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 16px;
+
+    margin-top: 38px;
+}
+
+.primary-btn,
+.secondary-btn {
+    display: inline-block;
+
+    text-decoration: none;
+
+    padding: 14px 28px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #2563eb;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 20px rgba(37, 99, 235, 0.2);
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+.secondary-btn {
+    background: #ffffff;
+
+    color: #2563eb;
+
+    border: 1px solid #2563eb;
+}
+
+.secondary-btn:hover {
+    background: #eff6ff;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   FEATURES SECTION
+========================= */
+
+.features {
+    padding: 90px 8%;
+
+    text-align: center;
+
+    background: #ffffff;
+}
+
+.features h2,
+.how-it-works h2 {
+    font-size: 38px;
+
+    line-height: 1.2;
+
+    margin-bottom: 15px;
+}
+
+.section-description {
+    color: #64748b;
+
+    font-size: 17px;
+
+    margin-bottom: 55px;
+}
+
+
+/* Feature Grid */
+
+.feature-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* Feature Card */
+
+.feature-card {
+    background: #ffffff;
+
+    padding: 32px;
+
+    text-align: left;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+
+    border-color: #bfdbfe;
+
+    box-shadow:
+        0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.feature-icon {
+    font-size: 32px;
+
+    margin-bottom: 18px;
+}
+
+.feature-card h3 {
+    font-size: 20px;
+
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how-it-works {
+    padding: 90px 8%;
+
+    text-align: center;
+
+    background: #f8fafc;
+}
+
+.steps {
+    max-width: 1200px;
+
+    margin: 55px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+.step {
+    padding: 25px;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+}
+
+.step-number {
+    width: 50px;
+
+    height: 50px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #dbeafe;
+
+    color: #2563eb;
+
+    font-weight: 800;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+
+    font-size: 18px;
+}
+
+.step p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding: 90px 20px;
+
+    text-align: center;
+
+    background: #eff6ff;
+}
+
+.cta h2 {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+.cta p {
+    color: #64748b;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #0f172a;
+
+    color: #ffffff;
+
+    padding: 40px 20px;
+
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+.footer-content p {
+    color: #cbd5e1;
+
+    font-size: 14px;
+}
+
+.copyright {
+    margin-top: 18px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 1000px) {
+
+    .feature-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 52px;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 0 5%;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+    .hero {
+        padding: 70px 20px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 200px;
+    }
+
+    .feature-container,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .features h2,
+    .how-it-works h2 {
+        font-size: 30px;
+    }
+
+    .cta h2 {
+        font-size: 30px;
+    }
+}       
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 70px 8%;
+}
+
+.dashboard-header {
+    margin-bottom: 45px;
+}
+
+.dashboard-header h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.dashboard-header p:not(.tagline) {
+    color: #64748b;
+    font-size: 17px;
+}
+
+
+/* =========================
+   DASHBOARD PROGRESS
+========================= */
+
+.dashboard-progress {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 70px;
+}
+
+.dashboard-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 28px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.dashboard-card h3 {
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.dashboard-card h2 {
+    font-size: 36px;
+    color: #2563eb;
+    margin: 5px 0;
+}
+
+.dashboard-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* Progress Bar */
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 12px;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: #2563eb;
+    border-radius: 20px;
+}
+
+
+/* =========================
+   DASHBOARD SECTION
+========================= */
+
+.dashboard-section {
+    margin-bottom: 70px;
+}
+
+.dashboard-section h2 {
+    font-size: 34px;
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   MODULE GRID
+========================= */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.dashboard-module {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 30px;
+    transition: 0.3s;
+}
+
+.dashboard-module:hover {
+    transform: translateY(-6px);
+    border-color: #bfdbfe;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.module-icon {
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.dashboard-module h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.dashboard-module p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.7;
+    min-height: 72px;
+}
+
+
+/* =========================
+   MODULE BUTTON
+========================= */
+
+.module-btn {
+    margin-top: 18px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.module-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   QUICK START
+========================= */
+
+.quick-start {
+    text-align: center;
+    padding: 55px 30px;
+    background: #eff6ff;
+    border-radius: 18px;
+    margin-bottom: 60px;
+}
+
+.quick-start h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.quick-start p {
+    color: #64748b;
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   DASHBOARD RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .dashboard-progress {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard-progress .dashboard-card:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .dashboard-container {
+        padding: 50px 5%;
+    }
+
+    .dashboard-header h1 {
+        font-size: 32px;
+    }
+
+    .dashboard-progress {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-progress .dashboard-card:first-child {
+        grid-column: auto;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-section h2 {
+        font-size: 28px;
+    }
+
+    .quick-start h2 {
+        font-size: 27px;
+    }
+
+}
+
+/* =====================================================
+   PYTHON PRACTICE PAGE
+===================================================== */
+
+.python-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 70px 5%;
+}
+
+.python-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.python-header .tagline {
+    color: #2563eb;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.python-header h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 12px 0;
+}
+
+.python-header p:not(.tagline) {
+    color: #64748b;
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   PROGRESS CARD
+===================================================== */
+
+.python-progress-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.progress-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #4f46e5;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+/* Python Quiz Progress */
+
+.progress-1 { width: 3.33%; }
+.progress-2 { width: 6.67%; }
+.progress-3 { width: 10%; }
+.progress-4 { width: 13.33%; }
+.progress-5 { width: 16.67%; }
+.progress-6 { width: 20%; }
+.progress-7 { width: 23.33%; }
+.progress-8 { width: 26.67%; }
+.progress-9 { width: 30%; }
+.progress-10 { width: 33.33%; }
+.progress-11 { width: 36.67%; }
+.progress-12 { width: 40%; }
+.progress-13 { width: 43.33%; }
+.progress-14 { width: 46.67%; }
+.progress-15 { width: 50%; }
+.progress-16 { width: 53.33%; }
+.progress-17 { width: 56.67%; }
+.progress-18 { width: 60%; }
+.progress-19 { width: 63.33%; }
+.progress-20 { width: 66.67%; }
+.progress-21 { width: 70%; }
+.progress-22 { width: 73.33%; }
+.progress-23 { width: 76.67%; }
+.progress-24 { width: 80%; }
+.progress-25 { width: 83.33%; }
+.progress-26 { width: 86.67%; }
+.progress-27 { width: 90%; }
+.progress-28 { width: 93.33%; }
+.progress-29 { width: 96.67%; }
+.progress-30 { width:30%; }
+
+/* =====================================================
+   QUIZ CARD
+===================================================== */
+
+.python-quiz-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 8px 25px rgba(15, 23, 42, 0.05);
+}
+
+.question-number {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.question-text {
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 25px 0;
+}
+
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+.option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #ffffff;
+}
+
+.option:hover {
+    border-color: #93c5fd;
+    background: #f8fbff;
+}
+
+.option input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   QUIZ BUTTON
+===================================================== */
+
+.quiz-submit {
+    margin-top: 15px;
+}
+
+.module-btn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.quiz-error {
+    margin-top: 15px;
+    color: #dc2626;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   ANSWER FEEDBACK
+===================================================== */
+
+.answer-feedback {
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 12px;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+}
+
+.answer-feedback h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.answer-feedback p {
+    margin: 8px 0;
+    color: #475569;
+}
+
+.explanation-box {
+    margin-top: 18px;
+    padding: 18px;
+    background: #ffffff;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+.explanation-box p {
+    margin-top: 8px;
+}
+
+
+/* =====================================================
+   NEXT BUTTON
+===================================================== */
+
+.next-btn {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   PYTHON TOPICS
+===================================================== */
+
+.python-topics {
+    margin-top: 70px;
+}
+
+.python-topics h2 {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.topic-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 14px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.topic-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.topic-icon {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.topic-card h3 {
+    margin-bottom: 8px;
+}
+
+.topic-card p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .python-container {
+        padding: 50px 5%;
+    }
+
+    .python-header h1 {
+        font-size: 32px;
+    }
+
+    .python-quiz-card {
+        padding: 25px;
+    }
+
+    .question-text {
+        font-size: 20px;
+    }
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-info {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+}
+
+/* =========================
+   AI RESUME ANALYZER
+========================= */
+
+.resume-page {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 25px;
+}
+
+.resume-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.resume-header h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.resume-header p {
+    font-size: 17px;
+    color: #666;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.resume-upload-card {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.resume-upload-card h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.resume-upload-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.resume-upload-card form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.resume-upload-card input[type="file"] {
+    width: 100%;
+    max-width: 450px;
+    padding: 14px;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    background: #fafafa;
+    cursor: pointer;
+}
+
+.resume-upload-card input[type="file"]:hover {
+    border-color: #555;
+}
+
+.resume-upload-card .module-btn {
+    border: none;
+    cursor: pointer;
+    padding: 13px 28px;
+    font-size: 16px;
+}
+
+/* =========================
+   RESUME ANALYZER RESULTS
+========================= */
+
+.detected-skills {
+    margin-top: 30px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.detected-skills h3 {
+    margin-bottom: 18px;
+    font-size: 22px;
+}
+
+.skill-list {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 12px !important;
+    margin-top: 10px;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0 !important;
+    background: #f1f3f5;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.resume-suggestions {
+    margin-top: 30px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.resume-suggestions h3 {
+    margin-bottom: 18px;
+    font-size: 22px;
+}
+
+.resume-suggestions ul {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.resume-suggestions li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* FORCE SKILL TAG SPACING */
+
+.resume-page .skill-list {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    margin-top: 10px !important;
+}
+
+.resume-page .skill-tag {
+    display: inline-block !important;
+    margin: 0 !important;
+    padding: 8px 15px !important;
+    background: #f1f3f5 !important;
+    border-radius: 20px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+}
+
+/* =========================
+   RESUME SCORE
+========================= */
+
+.analysis-score {
+    text-align: center;
+    margin: 30px 0 40px;
+}
+
+.score-circle {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #f1f3f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 10px solid #222;
+    box-sizing: border-box;
+}
+
+.score-circle span {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.analysis-score h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.analysis-score p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESUME SECTION CARDS
+========================= */
+
+.analysis-sections {
+    margin-top: 30px;
+}
+
+.analysis-sections h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.section-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.section-status {
+    font-weight: 600;
+}
+
+.section-status.missing {
+    font-weight: 600;
+}
+
+/* =========================
+   PERFORMANCE ANALYTICS
+========================= */
+
+.analytics-page {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 25px;
+}
+
+
+/* =========================
+   ANALYTICS HEADER
+========================= */
+
+.analytics-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.analytics-header h1 {
+    font-size: 36px;
+    margin-bottom: 12px;
+}
+
+.analytics-header p {
+    font-size: 17px;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   OVERVIEW CARDS
+========================= */
+
+.analytics-overview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-bottom: 35px;
+}
+
+.analytics-card {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid #e5e7eb;
+
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.analytics-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.analytics-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.analytics-number {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.analytics-card p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ANALYTICS DETAILS
+========================= */
+
+.analytics-details {
+    background: #ffffff;
+
+    padding: 32px;
+
+    margin-bottom: 25px;
+
+    border-radius: 16px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid #e5e7eb;
+}
+
+.analytics-details h2 {
+    font-size: 24px;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   PERFORMANCE ITEMS
+========================= */
+
+.performance-item {
+    margin-bottom: 24px;
+}
+
+.performance-item:last-child {
+    margin-bottom: 0;
+}
+
+.performance-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 9px;
+
+    font-size: 16px;
+}
+
+.performance-header span {
+    font-weight: 600;
+}
+
+.performance-header strong {
+    font-size: 15px;
+}
+
+
+/* =========================
+   PROGRESS BARS
+========================= */
+
+.analytics-details .progress-bar {
+    width: 100%;
+
+    height: 12px;
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 0;
+}
+
+.analytics-details .progress-fill {
+    width: 0%;
+
+    height: 100%;
+
+    background: #2563eb;
+
+    border-radius: 20px;
+
+    transition: width 1s ease;
+}
+
+
+/* =========================
+   OVERALL PERFORMANCE
+========================= */
+
+.analytics-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 17px 0;
+
+    border-bottom: 1px solid #eeeeee;
+
+    font-size: 16px;
+}
+
+.analytics-row:last-child {
+    border-bottom: none;
+}
+
+.analytics-row strong {
+    font-size: 18px;
+}
+
+
+/* =========================
+   PERFORMANCE INSIGHTS
+========================= */
+
+.insight-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.insight-card {
+    padding: 24px;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    background: #f8fafc;
+}
+
+.insight-card h3 {
+    margin-bottom: 14px;
+
+    font-size: 19px;
+}
+
+.insight-card p {
+    color: #64748b;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+.insight-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   ANALYTICS BUTTON
+========================= */
+
+.analytics-actions {
+    text-align: center;
+
+    margin-top: 30px;
+
+    margin-bottom: 50px;
+}
+
+.analytics-actions .module-btn {
+    display: inline-block;
+
+    text-decoration: none;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .analytics-page {
+        margin: 40px auto;
+
+        padding: 0 18px;
+    }
+
+    .analytics-header h1 {
+        font-size: 30px;
+    }
+
+    .analytics-header p {
+        font-size: 15px;
+    }
+
+    .analytics-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-details {
+        padding: 22px;
+    }
+
+    .analytics-details h2 {
+        font-size: 21px;
+    }
+
+    .performance-header {
+        font-size: 14px;
+
+        gap: 15px;
+    }
+
+    .performance-header strong {
+        font-size: 14px;
+
+        text-align: right;
+    }
+
+    .insight-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insight-card {
+        padding: 20px;
+    }
+
+}
+
+/* =========================
+   OVERALL SCORE HIGHLIGHT
+========================= */
+
+.overall-score-row strong {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2563eb;
+}

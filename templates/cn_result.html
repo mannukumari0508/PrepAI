@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CN Result - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/technical">
+                Technical Practice
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- RESULT -->
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                COMPUTER NETWORKS QUIZ COMPLETED
+            </p>
+
+            <h1>
+                Your CN Result 🎯
+            </h1>
+
+            <p>
+                You have completed the 30-question
+                Computer Networks quiz.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-module">
+
+            <h2>
+                Your Score
+            </h2>
+
+            <h1>
+                {{ score }} / {{ total }}
+            </h1>
+
+            <p>
+                {{ percentage }}%
+            </p>
+
+
+            <!-- PROGRESS BAR -->
+
+            <div class="progress-container">
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+                         data-progress="{{ percentage }}">
+                    </div>
+
+                </div>
+
+                <p>
+                    {{ percentage }}% Completed
+                </p>
+
+            </div>
+
+
+            <!-- BUTTONS -->
+
+            <br>
+
+            <a href="/cn/restart"
+               class="module-btn">
+                Retake Quiz
+            </a>
+
+            <a href="/cn"
+               class="module-btn">
+                ← Back to Computer Networks
+            </a>
+
+            <a href="/technical"
+               class="module-btn">
+                Technical Practice
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI.
+            AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+
+    <!-- PROGRESS BAR SCRIPT -->
+
+    <script>
+
+        const progressBar =
+            document.querySelector(".progress-fill");
+
+        const progress =
+            progressBar.dataset.progress;
+
+        progressBar.style.width =
+            progress + "%";
+
+    </script>
+
+</body>
+
+</html>

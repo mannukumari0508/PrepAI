@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DSA Quiz Result - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/technical">
+                Technical Practice
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout"
+               class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                DSA QUIZ COMPLETED
+            </p>
+
+            <h1>
+                Your DSA Quiz Result 🧠
+            </h1>
+
+            <p>
+                You have completed all 30 DSA placement questions.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-module">
+
+            <h2>
+                Your Score
+            </h2>
+
+            <h1>
+                {{ score }} / {{ total }}
+            </h1>
+
+
+            <div class="progress-container">
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+                         data-progress="{{ percentage }}">
+                    </div>
+
+                </div>
+
+                <p>
+                    {{ percentage }}% Completed
+                </p>
+
+            </div>
+
+
+            <p>
+                Keep practicing to improve your placement preparation!
+            </p>
+
+
+            <br>
+
+
+            <a href="/dsa/restart"
+               class="module-btn">
+                🔄 Retake Quiz
+            </a>
+
+
+            <a href="/dsa"
+               class="module-btn">
+                ← Back to DSA
+            </a>
+
+
+            <a href="/technical"
+               class="module-btn">
+                Technical Practice
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI.
+            AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const progressBar =
+            document.querySelector(".progress-fill");
+
+        const progress =
+            progressBar.dataset.progress;
+
+        progressBar.style.width =
+            progress + "%";
+
+    </script>
+
+</body>
+
+</html>

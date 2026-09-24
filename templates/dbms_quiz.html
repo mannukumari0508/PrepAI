@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DBMS Quiz - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/technical">
+                Technical Practice
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- QUIZ -->
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                DBMS QUIZ
+            </p>
+
+            <h1>
+                Database Management System 🧩
+            </h1>
+
+            <p>
+                Question {{ question_number }}
+                of {{ total_questions }}
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-module">
+
+            <h2>
+                {{ question.question }}
+            </h2>
+
+
+            <!-- OPTIONS -->
+            <form method="POST">
+
+                {% for option in question.options %}
+
+                <button
+                    type="submit"
+                    name="answer"
+                    value="{{ option }}"
+                    class="module-btn">
+
+                    {{ option }}
+
+                </button>
+
+                {% endfor %}
+
+            </form>
+
+
+            <!-- FEEDBACK -->
+            {% if feedback %}
+
+                {% if feedback == "correct" %}
+
+                    <div class="feedback correct">
+
+                        <h3>
+                            ✅ Correct!
+                        </h3>
+
+                        <p>
+                            {{ question.explanation }}
+                        </p>
+
+                    </div>
+
+                {% else %}
+
+                    <div class="feedback wrong">
+
+                        <h3>
+                            ❌ Wrong Answer
+                        </h3>
+
+                        <p>
+                            <strong>
+                                Correct Answer:
+                            </strong>
+
+                            {{ question.answer }}
+                        </p>
+
+                        <p>
+                            {{ question.explanation }}
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+
+                <!-- NEXT BUTTON -->
+
+                <br>
+
+                <a href="/dbms/next"
+                   class="module-btn">
+
+                    Next Question →
+
+                </a>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 PrepAI.
+            AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coding-Decoding - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/aptitude/reasoning">
+                Logical Reasoning
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                LOGICAL REASONING
+            </p>
+
+            <h1>
+                Coding-Decoding 🔐
+            </h1>
+
+            <p>
+                Practice coding-decoding questions
+                for campus placement exams.
+            </p>
+
+        </section>
+
+
+        <!-- Question 1 -->
+
+        <section class="dashboard-module">
+
+            <h2>Question 1</h2>
+
+            <p>
+                If CAT is coded as DBU, how is DOG coded
+                using the same pattern?
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q1" value="EPH">
+                    EPH
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="EOG">
+                    EOG
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="FPH">
+                    FPH
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="DPG">
+                    DPG
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q1', 'EPH', 'result1')">
+                    Submit Answer
+                </button>
+
+                <p id="result1"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Question 2 -->
+
+        <section class="dashboard-module">
+
+            <h2>Question 2</h2>
+
+            <p>
+                If PEN is coded as QFO, how is BOOK coded
+                using the same pattern?
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q2" value="CPPL">
+                    CPPL
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="CPPM">
+                    CPPM
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="CQPL">
+                    CQPL
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="BPPL">
+                    BPPL
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q2', 'CPPL', 'result2')">
+                    Submit Answer
+                </button>
+
+                <p id="result2"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Question 3 -->
+
+        <section class="dashboard-module">
+
+            <h2>Question 3</h2>
+
+            <p>
+                If APPLE is coded as BQQMF, how is MANGO
+                coded using the same pattern?
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q3" value="NBOHP">
+                    NBOHP
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="NBMHP">
+                    NBMHP
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="NBOGP">
+                    NBOGP
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="MBOHP">
+                    MBOHP
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q3', 'NBOHP', 'result3')">
+                    Submit Answer
+                </button>
+
+                <p id="result3"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+        <a href="/aptitude/reasoning"
+           class="module-btn">
+            ← Back to Logical Reasoning
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function checkAnswer(questionName, correctAnswer, resultId) {
+
+            const selected =
+                document.querySelector(
+                    'input[name="' + questionName + '"]:checked'
+                );
+
+            const result =
+                document.getElementById(resultId);
+
+
+            if (!selected) {
+
+                result.textContent =
+                    "Please select an option first.";
+
+                result.style.color = "red";
+
+                return;
+            }
+
+
+            if (selected.value === correctAnswer) {
+
+                result.textContent =
+                    "✅ Correct Answer!";
+
+                result.style.color = "green";
+
+            } else {
+
+                result.textContent =
+                    "❌ Incorrect Answer. Try again!";
+
+                result.style.color = "red";
+
+            }
+
+            fetch("/track-question", {
+                method: "POST"
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>

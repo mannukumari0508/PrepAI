@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Technical Interview - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/mock-interview">
+                Mock Interview
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                TECHNICAL MOCK INTERVIEW
+            </p>
+
+            <h1>
+                Technical Interview 🎤
+            </h1>
+
+            <p>
+                Test your technical knowledge with
+                placement-focused interview questions.
+            </p>
+
+        </section>
+
+
+        <!-- INTERVIEW INFO -->
+        <section class="dashboard-module">
+
+            <h2>
+                What to Expect
+            </h2>
+
+            <p>
+                You will be asked questions from:
+            </p>
+
+            <ul>
+                <li>Java & OOP</li>
+                <li>Python</li>
+                <li>SQL & DBMS</li>
+                <li>DSA</li>
+                <li>Computer Networks</li>
+            </ul>
+
+            <br>
+
+            <p>
+                Answer each question as if you are
+                speaking to an interviewer.
+            </p>
+
+            <br>
+
+            <a href="/mock-interview/technical/start"
+               class="module-btn">
+                Start Technical Interview
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 PrepAI.
+            AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

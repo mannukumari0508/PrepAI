@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SQL Result - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/technical">
+                Technical Practice
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- RESULT -->
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                SQL QUIZ COMPLETED
+            </p>
+
+            <h1>
+                Your SQL Result 🎯
+            </h1>
+
+            <p>
+                You have completed the SQL Fundamentals Quiz.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-module">
+
+            <div class="module-icon">
+                🏆
+            </div>
+
+            <h2>
+                {{ score }} / {{ total }}
+            </h2>
+
+            <p>
+                Your Score
+            </p>
+
+            <a href="/sql/restart" class="module-btn">
+                Try Again
+            </a>
+
+            <a href="/technical" class="module-btn">
+                Back to Technical Practice
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HR Interview - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                HR MOCK INTERVIEW
+            </p>
+
+            <h1>
+                Question {{ question_number }}
+                of {{ total_questions }}
+            </h1>
+
+            <p>
+                Answer the question as you would
+                answer an interviewer.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-module">
+
+            <h2>
+                {{ question.question }}
+            </h2>
+
+            <br>
+
+            <form method="POST">
+
+                <textarea
+                    name="answer"
+                    rows="7"
+                    placeholder="Type your answer here..."
+                    required></textarea>
+
+                <br><br>
+
+                <button
+                    type="submit"
+                    class="module-btn">
+                    Submit Answer
+                </button>
+
+            </form>
+
+
+            {% if feedback %}
+
+                <div class="feedback correct">
+
+                    <h3>
+                        ✅ Answer Recorded
+                    </h3>
+
+                    <p>
+                        {{ feedback }}
+                    </p>
+
+                    <p>
+                        <strong>
+                            Expected Answer:
+                        </strong>
+                    </p>
+
+                    <p>
+                        {{ question.answer }}
+                    </p>
+
+                </div>
+
+                <br>
+
+                <a href="/mock-interview/hr/next"
+                   class="module-btn">
+                    Next Question →
+                </a>
+
+            {% endif %}
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

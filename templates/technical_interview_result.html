@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Technical Interview Result - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/mock-interview">
+                Mock Interview
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                INTERVIEW COMPLETED
+            </p>
+
+            <h1>
+                Technical Interview Result 🎯
+            </h1>
+
+            <p>
+                You have completed your technical mock interview.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-module">
+
+            <h2>
+                Your Score
+            </h2>
+
+            <h1>
+                {{ score }} / {{ total }}
+            </h1>
+
+            <p>
+                {{ percentage }}% Score
+            </p>
+
+            <br>
+
+
+            <div class="progress-container">
+
+                <div class="progress-bar">
+
+                    <div class="progress-fill"
+                         data-progress="{{ percentage }}">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <br>
+
+
+            <div>
+
+                <a href="/mock-interview/technical/start"
+                   class="module-btn">
+                    Retake Interview
+                </a>
+
+                <a href="/mock-interview"
+                   class="module-btn">
+                    Back to Mock Interview
+                </a>
+
+                <a href="/dashboard"
+                   class="module-btn">
+                    Dashboard
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        const progressBar =
+            document.querySelector(".progress-fill");
+
+        const progress =
+            progressBar.dataset.progress;
+
+        progressBar.style.width =
+            progress + "%";
+
+    </script>
+
+</body>
+
+</html>

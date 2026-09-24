@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Python Result | PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/technical">
+                Technical Practice
+            </a>
+
+            <a href="/logout"
+               class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="dashboard-container">
+
+        <!-- HEADER -->
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                PYTHON PRACTICE
+            </p>
+
+            <h1>
+                Quiz Completed 🎉
+            </h1>
+
+            <p>
+                Here is your Python practice performance.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             RESULT CARD
+        ========================== -->
+
+        <section class="dashboard-section">
+
+            <div class="dashboard-module result-card">
+
+                <div class="module-icon">
+                    🏆
+                </div>
+
+                <h2>
+                    Your Score
+                </h2>
+
+                <div class="result-score">
+                    {{ score }} / {{ total_questions }}
+                </div>
+
+
+                <!-- PERFORMANCE -->
+
+                <p class="result-message">
+
+                    {% if score >= 8 %}
+
+                        Excellent performance! 🔥
+
+                    {% elif score >= 5 %}
+
+                        Good attempt! Keep practicing. 💪
+
+                    {% else %}
+
+                        Keep practicing and strengthen your basics. 📚
+
+                    {% endif %}
+
+                </p>
+
+
+                <!-- RESULT DETAILS -->
+
+                <div class="result-details">
+
+                    <div class="result-detail-card">
+
+                        <span class="result-detail-icon">
+                            📝
+                        </span>
+
+                        <span class="result-detail-title">
+                            Questions
+                        </span>
+
+                        <strong>
+                            {{ total_questions }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-detail-card">
+
+                        <span class="result-detail-icon">
+                            ✅
+                        </span>
+
+                        <span class="result-detail-title">
+                            Correct
+                        </span>
+
+                        <strong>
+                            {{ score }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-detail-card">
+
+                        <span class="result-detail-icon">
+                            ❌
+                        </span>
+
+                        <span class="result-detail-title">
+                            Incorrect
+                        </span>
+
+                        <strong>
+                            {{ total_questions - score }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-detail-card">
+
+                        <span class="result-detail-icon">
+                            📊
+                        </span>
+
+                        <span class="result-detail-title">
+                            Accuracy
+                        </span>
+
+                        <strong>
+                            {{ ((score / total_questions) * 100) | round(0) }}%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     ACTION BUTTONS
+                ========================== -->
+
+                <div class="result-actions">
+
+                    <a href="/python"
+                       class="module-btn">
+                        Try Again
+                    </a>
+
+                    <a href="/technical"
+                       class="module-btn">
+                        Technical Practice
+                    </a>
+
+                    <a href="/dashboard"
+                       class="module-btn">
+                        Dashboard
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             NEXT STEP
+        ========================== -->
+
+        <section class="dashboard-section">
+
+            <div class="quick-start">
+
+                <h2>
+                    Keep Improving 🚀
+                </h2>
+
+                <p>
+                    Continue practicing Python and prepare
+                    yourself for placement interviews and coding rounds.
+                </p>
+
+                <a href="/technical"
+                   class="module-btn">
+                    Explore More Topics
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

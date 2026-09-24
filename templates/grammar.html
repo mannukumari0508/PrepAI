@@ -1,0 +1,301 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grammar Practice - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/aptitude/verbal">
+                Verbal Ability
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                VERBAL ABILITY
+            </p>
+
+            <h1>
+                Grammar Practice 📝
+            </h1>
+
+            <p>
+                Practice grammar questions commonly
+                asked in placement examinations.
+            </p>
+
+        </section>
+
+
+        <!-- Question 1 -->
+
+        <section class="dashboard-module">
+
+            <h2>Question 1</h2>
+
+            <p>
+                Choose the grammatically correct sentence.
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q1" value="A">
+                    She go to college every day.
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="B">
+                    She goes to college every day.
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="C">
+                    She going to college every day.
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="D">
+                    She gone to college every day.
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q1', 'B', 'result1')">
+                    Submit Answer
+                </button>
+
+                <p id="result1"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Question 2 -->
+
+        <section class="dashboard-module">
+
+            <h2>Question 2</h2>
+
+            <p>
+                Choose the correct option:
+                "Neither of the students _____ present."
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q2" value="A">
+                    are
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="B">
+                    were
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="C">
+                    is
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="D">
+                    have
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q2', 'C', 'result2')">
+                    Submit Answer
+                </button>
+
+                <p id="result2"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Question 3 -->
+
+        <section class="dashboard-module">
+
+            <h2>Question 3</h2>
+
+            <p>
+                Choose the correct sentence.
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q3" value="A">
+                    He has completed his work.
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="B">
+                    He have completed his work.
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="C">
+                    He having completed his work.
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="D">
+                    He complete his work yesterday.
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q3', 'A', 'result3')">
+                    Submit Answer
+                </button>
+
+                <p id="result3"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+        <a href="/aptitude/verbal"
+           class="module-btn">
+            ← Back to Verbal Ability
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function checkAnswer(questionName, correctAnswer, resultId) {
+
+            const selected =
+                document.querySelector(
+                    'input[name="' + questionName + '"]:checked'
+                );
+
+            const result =
+                document.getElementById(resultId);
+
+
+            if (!selected) {
+
+                result.textContent =
+                    "Please select an option first.";
+
+                result.style.color = "red";
+
+                return;
+            }
+
+
+            if (selected.value === correctAnswer) {
+
+                result.textContent =
+                    "✅ Correct Answer!";
+
+                result.style.color = "green";
+
+            } else {
+
+                result.textContent =
+                    "❌ Incorrect Answer. Try again!";
+
+                result.style.color = "red";
+
+            }
+
+            fetch("/track-question", {
+                method: "POST"
+            });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```

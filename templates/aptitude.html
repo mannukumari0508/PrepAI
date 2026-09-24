@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aptitude Practice - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                APTITUDE PRACTICE
+            </p>
+
+            <h1>
+                Improve Your Aptitude Skills 🧠
+            </h1>
+
+            <p>
+                Practice quantitative aptitude, logical reasoning
+                and verbal ability for placement exams.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-section">
+
+            <div class="dashboard-grid">
+
+
+                <!-- Quantitative Aptitude -->
+
+                <div class="dashboard-module">
+
+                    <div class="module-icon">
+                        🔢
+                    </div>
+
+                    <h3>
+                        Quantitative Aptitude
+                    </h3>
+
+                    <p>
+                        Practice percentages, profit & loss,
+                        averages, ratios and more.
+                    </p>
+
+                    <a href="/aptitude/quantitative"
+                       class="module-btn">
+                        Start Practice
+                    </a>
+
+                </div>
+
+
+                <!-- Logical Reasoning -->
+
+                <div class="dashboard-module">
+
+                    <div class="module-icon">
+                        🧩
+                    </div>
+
+                    <h3>
+                        Logical Reasoning
+                    </h3>
+
+                    <p>
+                        Practice series, coding-decoding,
+                        puzzles and logical reasoning.
+                    </p>
+
+                    <a href="/aptitude/reasoning"
+                       class="module-btn">
+                        Start Practice
+                    </a>
+
+                </div>
+
+
+                <!-- Verbal Ability -->
+
+                <div class="dashboard-module">
+
+                    <div class="module-icon">
+                        📖
+                    </div>
+
+                    <h3>
+                        Verbal Ability
+                    </h3>
+
+                    <p>
+                        Improve grammar, vocabulary,
+                        reading comprehension and
+                        sentence correction.
+                    </p>
+
+                    <a href="/aptitude/verbal"
+                       class="module-btn">
+                        Start Practice
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

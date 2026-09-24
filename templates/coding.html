@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coding Practice - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/technical">
+                Technical Practice
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                CODING PRACTICE
+            </p>
+
+            <h1>
+                Improve Your Coding Skills 💻
+            </h1>
+
+            <p>
+                Practice placement-focused coding problems
+                and strengthen your problem-solving skills.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-grid">
+
+
+            <div class="dashboard-module">
+
+                <div class="module-icon">
+                    🟢
+                </div>
+
+                <h3>
+                    Easy Problems
+                </h3>
+
+                <p>
+                    Start with basic programming,
+                    arrays, strings and simple logic problems.
+                </p>
+
+                <a href="/coding/easy"
+                   class="module-btn">
+                    Start Easy
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-module">
+
+                <div class="module-icon">
+                    🟡
+                </div>
+
+                <h3>
+                    Medium Problems
+                </h3>
+
+                <p>
+                    Practice arrays, strings,
+                    searching, sorting and problem-solving.
+                </p>
+
+                <a href="/coding/medium"
+                   class="module-btn">
+                    Start Medium
+                </a>
+
+            </div>
+
+
+            <div class="dashboard-module">
+
+                <div class="module-icon">
+                    🔴
+                </div>
+
+                <h3>
+                    Placement Problems
+                </h3>
+
+                <p>
+                    Solve coding problems commonly asked
+                    in campus placement tests.
+                </p>
+
+                <a href="/coding/placement"
+                   class="module-btn">
+                    Start Practice
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+        <br>
+
+
+        <a href="/dashboard"
+           class="module-btn">
+            ← Back to Dashboard
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

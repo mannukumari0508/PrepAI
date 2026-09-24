@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Analyzer - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+
+    <main class="resume-page">
+
+        <section class="resume-header">
+
+            <h1>AI Resume Analyzer</h1>
+
+            <p>
+                Upload your resume and get personalized suggestions
+                to improve your placement profile.
+            </p>
+
+        </section>
+
+        <section class="resume-upload-card">
+
+            <h2>Upload Your Resume</h2>
+
+            <p>
+                Upload your resume in PDF format to analyze your
+                skills, projects and overall profile.
+            </p>
+
+            {% if error %}
+                <div class="feedback wrong">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            {% if success %}
+                <div class="feedback correct">
+                    {{ success }}
+                </div>
+            {% endif %}
+
+            {% if resume_text %}
+
+                <div class="resume-result">
+
+                    <h2>Resume Analysis</h2>
+
+                    <div class="analysis-score">
+
+                        <div class="score-circle">
+                            <span>{{ analysis_score }}%</span>
+                        </div>
+
+                        <h3>Resume Score</h3>
+
+                        <p>
+                            Based on the presence of important resume sections
+                        </p>
+
+                    </div>
+
+                    <div class="analysis-sections">
+
+                        <h3>Resume Sections</h3>
+
+                        {% for section, present in sections.items() %}
+
+                            <div class="section-item">
+
+                                <span>{{ section }}</span>
+
+                                {% if present %}
+                                    <span class="section-status">✓ Present</span>
+                                {% else %}
+                                    <span class="section-status missing">⚠ Missing</span>
+                                {% endif %}
+
+                            </div>
+
+                        {% endfor %}
+
+                    </div>
+
+                    <div class="detected-skills">
+
+                        <h3>Detected Skills</h3>
+
+                        {% if detected_skills %}
+
+                            <div class="skill-list">
+
+                                {% for skill in detected_skills %}
+                                    <span class="skill-tag">{{ skill }}</span>&nbsp;
+                                {% endfor %}
+
+                            </div>
+
+                        {% else %}
+
+                            <p>No technical skills detected.</p>
+
+                        {% endif %}
+
+                    </div>
+
+                    <div class="resume-text">
+
+                        <h3>Extracted Resume Content</h3>
+
+                        {{ resume_text }}
+
+                    </div>
+
+                </div>
+
+            {% endif %}
+
+                        {% if suggestions %}
+
+                            <div class="resume-suggestions">
+
+                                <h3>Personalized Suggestions</h3>
+
+                                <ul>
+                                    {% for suggestion in suggestions %}
+                                        <li>{{ suggestion }}</li>
+                                    {% endfor %}
+                                </ul>
+
+                            </div>
+
+                        {% endif %}
+
+
+            <form method="POST"
+                    action="/resume-analyzer"
+                    enctype="multipart/form-data">
+                <input
+                    type="file"
+                    name="resume"
+                    accept=".pdf"
+                    required
+                >
+
+                <button type="submit" class="module-btn">
+                    Analyze Resume
+                </button>
+            </form>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

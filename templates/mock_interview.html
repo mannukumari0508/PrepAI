@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Mock Interview - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/technical">
+                Technical Practice
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                AI MOCK INTERVIEW
+            </p>
+
+            <h1>
+                Practice Like a Real Interview 🎤
+            </h1>
+
+            <p>
+                Choose your interview type and start
+                practicing with PrepAI.
+            </p>
+
+        </section>
+
+
+        <!-- INTERVIEW OPTIONS -->
+        <section class="dashboard-grid">
+
+            <!-- TECHNICAL -->
+            <div class="dashboard-module">
+
+                <div class="module-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Technical Interview
+                </h3>
+
+                <p>
+                    Practice questions on Java, Python,
+                    SQL, DSA, DBMS and Computer Networks.
+                </p>
+
+                <a href="/mock-interview/technical"
+                   class="module-btn">
+                    Start Technical Interview
+                </a>
+
+            </div>
+
+
+            <!-- HR -->
+            <div class="dashboard-module">
+
+                <div class="module-icon">
+                    👔
+                </div>
+
+                <h3>
+                    HR Interview
+                </h3>
+
+                <p>
+                    Practice common HR questions,
+                    self-introduction and behavioral
+                    interview questions.
+                </p>
+
+                <a href="/mock-interview/hr/start"
+                class="module-btn">
+                    Start HR Interview
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 PrepAI.
+            AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

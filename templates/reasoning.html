@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Logical Reasoning - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/aptitude">
+                Aptitude
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                LOGICAL REASONING
+            </p>
+
+            <h1>
+                Logical Reasoning 🧩
+            </h1>
+
+            <p>
+                Practice series, coding-decoding and
+                logical reasoning questions for placements.
+            </p>
+
+        </section>
+
+        <section class="dashboard-section">
+
+    <div class="dashboard-grid">
+
+        <div class="dashboard-module">
+
+            <div class="module-icon">
+                🔢
+            </div>
+
+            <h3>
+                Number Series
+            </h3>
+
+            <p>
+                Practice number series questions
+                for placement exams.
+            </p>
+
+            <a href="/aptitude/reasoning/series"
+               class="module-btn">
+                Start Practice
+            </a>
+
+        </div>
+
+
+        <div class="dashboard-module">
+
+            <div class="module-icon">
+                🔐
+            </div>
+
+            <h3>
+                Coding-Decoding
+            </h3>
+
+            <p>
+                Practice coding and decoding
+                based reasoning questions.
+            </p>
+
+            <a href="/aptitude/reasoning/coding-decoding"
+               class="module-btn">
+                Start Practice
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<div class="dashboard-module">
+
+    <div class="module-icon">
+        👨‍👩‍👧‍👦
+    </div>
+
+    <h3>
+        Blood Relations
+    </h3>
+
+    <p>
+        Practice family and blood relation
+        based reasoning questions.
+    </p>
+
+    <a href="/aptitude/reasoning/blood-relations"
+       class="module-btn">
+        Start Practice
+    </a>
+
+</div>
+
+<br>
+
+
+        <!-- Question 1 -->
+
+        <section class="dashboard-module">
+
+            <h2>
+                Question 1
+            </h2>
+
+            <p>
+                Find the next number in the series:
+                2, 4, 8, 16, ?
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q1" value="24">
+                    24
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="30">
+                    30
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="32">
+                    32
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q1" value="36">
+                    36
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q1', '32', 'result1')">
+                    Submit Answer
+                </button>
+
+                <p id="result1"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Question 2 -->
+
+        <section class="dashboard-module">
+
+            <h2>
+                Question 2
+            </h2>
+
+            <p>
+                If CAT is coded as DBU, how is DOG coded
+                using the same pattern?
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q2" value="EPH">
+                    EPH
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="EOG">
+                    EOG
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="FPH">
+                    FPH
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q2" value="DPG">
+                    DPG
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q2', 'EPH', 'result2')">
+                    Submit Answer
+                </button>
+
+                <p id="result2"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+
+        <!-- Question 3 -->
+
+        <section class="dashboard-module">
+
+            <h2>
+                Question 3
+            </h2>
+
+            <p>
+                Find the odd one out:
+                Apple, Mango, Banana, Carrot
+            </p>
+
+            <form>
+
+                <label>
+                    <input type="radio" name="q3" value="Apple">
+                    Apple
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="Mango">
+                    Mango
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="Banana">
+                    Banana
+                </label>
+
+                <br><br>
+
+                <label>
+                    <input type="radio" name="q3" value="Carrot">
+                    Carrot
+                </label>
+
+                <br><br>
+
+                <button
+                    type="button"
+                    class="module-btn"
+                    onclick="checkAnswer('q3', 'Carrot', 'result3')">
+                    Submit Answer
+                </button>
+
+                <p id="result3"></p>
+
+            </form>
+
+        </section>
+
+
+        <br>
+
+        <a href="/aptitude"
+           class="module-btn">
+            ← Back to Aptitude
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function checkAnswer(questionName, correctAnswer, resultId) {
+
+            const selected =
+                document.querySelector(
+                    'input[name="' + questionName + '"]:checked'
+                );
+
+            const result =
+                document.getElementById(resultId);
+
+
+            if (!selected) {
+
+                result.textContent =
+                    "Please select an option first.";
+
+                result.style.color = "red";
+
+                return;
+            }
+
+
+            if (selected.value === correctAnswer) {
+
+                result.textContent =
+                    "✅ Correct Answer!";
+
+                result.style.color = "green";
+
+            } else {
+
+                result.textContent =
+                    "❌ Incorrect Answer. Try again!";
+
+                result.style.color = "red";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

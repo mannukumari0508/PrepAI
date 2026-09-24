@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Python Practice | PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        PrepAI
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/dashboard">
+            Dashboard
+        </a>
+
+        <a href="/technical">
+            Technical Practice
+        </a>
+
+        <a href="/logout">
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main class="python-container">
+
+
+    <!-- HEADER -->
+
+    <section class="python-header">
+
+        <p class="tagline">
+            Technical Practice
+        </p>
+
+        <h1>
+            Master Python for Placements 🐍
+        </h1>
+
+        <p>
+            Practice Python concepts through
+            placement-oriented questions.
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         PROGRESS
+    ========================= -->
+
+    <section class="python-progress-card">
+
+        <div class="progress-info">
+
+            <span>
+                Question {{ question_number }}
+                of {{ total_questions }}
+            </span>
+
+            <span>
+                Score: {{ score }}
+            </span>
+
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress-fill progress-{{ question_number }}"></div>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         QUESTION
+    ========================= -->
+
+    <section class="python-quiz-card">
+
+
+        <div class="question-number">
+
+            Question {{ question_number }}
+
+        </div>
+
+
+        <h2 class="question-text">
+
+            {{ question.question }}
+
+        </h2>
+
+
+        <!-- =========================
+             BEFORE SUBMIT
+        ========================= -->
+
+        {% if not submitted %}
+
+        <form method="POST"
+              action="/python">
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="answer"
+                       value="A"
+                       required>
+
+                <span>
+                    A. {{ question.option_a }}
+                </span>
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="answer"
+                       value="B">
+
+                <span>
+                    B. {{ question.option_b }}
+                </span>
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="answer"
+                       value="C">
+
+                <span>
+                    C. {{ question.option_c }}
+                </span>
+
+            </label>
+
+
+            <label class="option">
+
+                <input type="radio"
+                       name="answer"
+                       value="D">
+
+                <span>
+                    D. {{ question.option_d }}
+                </span>
+
+            </label>
+
+
+            {% if error %}
+
+            <p class="quiz-error">
+                {{ error }}
+            </p>
+
+            {% endif %}
+
+
+            <button type="submit"
+                    class="module-btn quiz-submit">
+
+                Submit Answer
+
+            </button>
+
+
+        </form>
+
+        {% endif %}
+
+
+        <!-- =========================
+             ANSWER FEEDBACK
+        ========================= -->
+
+        {% if submitted %}
+
+        <div class="answer-feedback">
+
+
+            {% if is_correct %}
+
+            <h3>
+                Correct! 🎉
+            </h3>
+
+            {% else %}
+
+            <h3>
+                Incorrect! ❌
+            </h3>
+
+            {% endif %}
+
+
+            <p>
+                <strong>Your Answer:</strong>
+                {{ selected_answer }}
+            </p>
+
+
+            <p>
+                <strong>Correct Answer:</strong>
+                {{ correct_answer }}
+            </p>
+
+
+            <div class="explanation-box">
+
+                <strong>
+                    Explanation:
+                </strong>
+
+                <p>
+                    {{ explanation }}
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 NEXT QUESTION
+            ========================= -->
+
+            <div style="margin-top: 25px;">
+
+                <a href="{{ url_for('python_next') }}"
+                   class="module-btn next-btn">
+
+                    Next Question →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+        {% endif %}
+
+
+    </section>
+
+
+    <!-- =========================
+         TOPICS
+    ========================= -->
+
+    <section class="python-topics">
+
+        <h2>
+            Python Placement Topics
+        </h2>
+
+
+        <div class="topic-grid">
+
+
+            <div class="topic-card">
+
+                <div class="topic-icon">
+                    🐍
+                </div>
+
+                <h3>
+                    Python Basics
+                </h3>
+
+                <p>
+                    Variables, data types,
+                    operators and syntax.
+                </p>
+
+            </div>
+
+
+            <div class="topic-card">
+
+                <div class="topic-icon">
+                    🔁
+                </div>
+
+                <h3>
+                    Loops & Conditions
+                </h3>
+
+                <p>
+                    if-else, for loop,
+                    while loop and patterns.
+                </p>
+
+            </div>
+
+
+            <div class="topic-card">
+
+                <div class="topic-icon">
+                    📦
+                </div>
+
+                <h3>
+                    Collections
+                </h3>
+
+                <p>
+                    Lists, tuples, sets
+                    and dictionaries.
+                </p>
+
+            </div>
+
+
+            <div class="topic-card">
+
+                <div class="topic-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    Functions
+                </h3>
+
+                <p>
+                    Functions, arguments,
+                    return values and scope.
+                </p>
+
+            </div>
+
+
+            <div class="topic-card">
+
+                <div class="topic-icon">
+                    🧩
+                </div>
+
+                <h3>
+                    OOP
+                </h3>
+
+                <p>
+                    Classes, objects,
+                    inheritance and polymorphism.
+                </p>
+
+            </div>
+
+
+            <div class="topic-card">
+
+                <div class="topic-icon">
+                    💻
+                </div>
+
+                <h3>
+                    Coding Practice
+                </h3>
+
+                <p>
+                    Placement-oriented
+                    Python coding problems.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <p>
+        © 2026 PrepAI. Built for placement preparation.
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>DBMS Practice - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/technical">
+                Technical Practice
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout"
+               class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN CONTENT -->
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                DBMS PRACTICE
+            </p>
+
+            <h1>
+                Database Management System 🧩
+            </h1>
+
+            <p>
+                Practice important DBMS concepts
+                for campus placement interviews.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-module">
+
+            <h2>
+                Placement-Focused DBMS
+            </h2>
+
+            <p>
+                This module covers keys, normalization,
+                SQL basics, joins, transactions, ACID
+                properties, indexing and database concepts.
+            </p>
+
+            <br>
+
+            <a href="/dbms/quiz"
+               class="module-btn">
+                Start 30-Question Quiz
+            </a>
+
+            <a href="/technical"
+               class="module-btn">
+                ← Back to Technical Practice
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI.
+            AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

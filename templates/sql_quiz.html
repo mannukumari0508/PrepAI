@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SQL Quiz - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/technical">
+                Technical Practice
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- QUIZ -->
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                SQL QUIZ
+            </p>
+
+            <h1>
+                SQL Fundamentals Quiz 🗄️
+            </h1>
+
+            <p>
+                Test your SQL knowledge for placement interviews.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-module">
+
+    <h2>
+        Question {{ question_number }}
+        of {{ total_questions }}
+    </h2>
+
+    <p>
+        {{ question.question }}
+    </p>
+
+    <form method="POST">
+
+        <div class="quiz-options">
+
+            {% for option in question.options %}
+
+            <button
+                type="submit"
+                name="answer"
+                value="{{ option }}"
+                class="module-btn">
+
+                {{ option }}
+
+            </button>
+
+            {% endfor %}
+
+        </div>
+
+    </form>
+
+    {% if feedback == "correct" %}
+
+        <p>
+            ✅ Correct Answer!
+        </p>
+
+        <p>
+            {{ question.explanation }}
+        </p>
+
+    {% elif feedback == "wrong" %}
+
+        <p>
+            ❌ Wrong Answer!
+        </p>
+
+        <p>
+            Correct Answer: <strong>{{ question.answer }}</strong>
+        </p>
+
+        <p>
+            {{ question.explanation }}
+        </p>
+
+    {% endif %}
+
+    {% if feedback %}
+
+        <form method="GET" action="/sql/next">
+            <button type="submit" class="module-btn">
+                Next Question →
+            </button>
+        </form>
+
+    {% endif %}
+
+</section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

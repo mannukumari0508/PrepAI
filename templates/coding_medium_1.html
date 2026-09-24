@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Two Sum - PrepAI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            PrepAI
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/coding/medium">
+                Medium Coding
+            </a>
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/logout" class="register-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="dashboard-container">
+
+        <section class="dashboard-header">
+
+            <p class="tagline">
+                CODING PROBLEM
+            </p>
+
+            <h1>
+                Two Sum
+            </h1>
+
+            <p>
+                Solve the following programming problem.
+            </p>
+
+        </section>
+
+
+        <section class="dashboard-module">
+
+            <h2>
+                Problem Statement
+            </h2>
+
+            <p>
+                Given an array of integers and a target value,
+                find two numbers whose sum is equal to the target.
+            </p>
+
+            <br>
+
+            <h3>
+                Example
+            </h3>
+
+            <p>
+                Input: [2, 7, 11, 15], Target = 9
+            </p>
+
+            <p>
+                Output: 2, 7
+            </p>
+
+            <br>
+
+            <h3>
+                Your Solution
+            </h3>
+
+            <form method="POST">
+
+                <textarea
+                    name="code"
+                    rows="12"
+                    placeholder="Write your code here..."
+                    required></textarea>
+
+                <br><br>
+
+                <button
+                    type="submit"
+                    class="module-btn">
+                    Submit Code
+                </button>
+
+            </form>
+
+
+            {% if result %}
+
+                <div class="feedback correct">
+
+                    <h3>
+                        ✅ Submitted
+                    </h3>
+
+                    <p>
+                        {{ result }}
+                    </p>
+
+                </div>
+
+            {% endif %}
+
+        </section>
+
+
+        <br>
+
+        <a href="/coding/medium"
+           class="module-btn">
+            ← Back to Medium Problems
+        </a>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 PrepAI. AI-Powered Placement Preparation Platform.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
