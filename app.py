@@ -1,4 +1,6 @@
 from flask import Flask, render_template, request, redirect, session
+import os
+from dotenv import load_dotenv
 import random
 from pypdf import PdfReader
 from flask_sqlalchemy import SQLAlchemy
@@ -8,17 +10,20 @@ from werkzeug.security import generate_password_hash, check_password_hash
 # ============================================================
 # FLASK APP
 # ============================================================
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "prepai-secret-key-2026"
+app.secret_key = os.getenv("SECRET_KEY")
 
 
-# ============================================================
+# ====================~========================================
 # MYSQL DATABASE
 # ============================================================
 
+from urllib.parse import quote_plus
+
 app.config["SQLALCHEMY_DATABASE_URI"] = (
-    "mysql+pymysql://prepai_user:PrepAI%402026@localhost/prepai"
+    f"mysql+pymysql://prepai_user:{quote_plus(os.getenv('DB_PASSWORD'))}@localhost/prepai"
 )
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
