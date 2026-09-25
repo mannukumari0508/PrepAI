@@ -152,7 +152,7 @@ venv\Scripts\Activate.ps1
 ### 4. Install Dependencies
 
 ```bash
-pip install flask flask-sqlalchemy werkzeug pypdf
+pip install -r requirements.txt
 ```
 
 ### 5. Configure MySQL
