@@ -157,7 +157,9 @@ pip install -r requirements.txt
 
 ### 5. Configure MySQL
 
-Create the required MySQL database and configure the database connection in the Flask application.
+Create a MySQL database named `prepai`.
+
+Create a `.env` file in the project root and add your local database credentials and Flask secret key. Do not commit the `.env` file to GitHub.
 
 ### 6. Run the Application
 
