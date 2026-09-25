@@ -87,6 +87,7 @@ PrepAI is a web-based placement preparation platform designed to help students p
 PrepAI/
 │
 ├── app.py
+├── requirements.txt
 ├── .gitignore
 ├── README.md
 │
